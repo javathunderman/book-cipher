@@ -5,8 +5,8 @@ pipeline {
     }
     stages {
         stage('Build') {
-            withEnv(['PATH+EXTRA=/home/arjun/.local/bin']) {
-                steps {
+            steps {
+                withEnv(['PATH+EXTRA=/home/arjun/.local/bin']) {
                     sh '''
                         pip3 install pyinstaller PySimpleGUI pdftotext && cd src && pyinstaller main.py
                     '''
